@@ -5,16 +5,13 @@ require('conn.php');
 
 // 2) Escrever a query
 $sql = <<<SQL
-
 SELECT * FROM contatos;
-
 SQL;
 
 // Executar a query e retorna dados na variável
 $res = $conn->query($sql);
 
 $out = <<<HTML
-
 <table>
 <tr>
     <th>Nome</th>
@@ -22,7 +19,6 @@ $out = <<<HTML
     <th>Assunto</th>
     <th>Mensagem</th>
 </tr>
-
 HTML;
 
 while ($user = $res->fetch_assoc()) :

@@ -32,7 +32,6 @@ if (count($erro) == 0) :
 
     // SQL que grva os dados
     $sql = <<<SQL
-
 INSERT INTO contatos (
     nome,
     email,
@@ -44,7 +43,6 @@ INSERT INTO contatos (
     '{$assunto}',
     '{$mensagem}'
 );   
-
 SQL;
 
     // Executa a query
@@ -55,11 +53,9 @@ SQL;
 
     // Gera feedback
     $feedback = <<<HTML
-
     <p>Olá {$primeiro_nome}!</p>
     <blockquote>Seu contato foi enviado com sucesso.</blockquote>
     <p>Obrigado...</p>
-
 HTML;
 
 // Se ocorreram erros...
@@ -70,7 +66,6 @@ else :
 <h3>Ooooops!</h3>
 <p>Algo errado não deu certo:</p>
 <ul>
-
 HTML;
 
     // Loop que itera cada mensagem de erro
@@ -83,11 +78,8 @@ HTML;
     $feedback .= <<<HTML
     
 </ul>
-
 <p>Conserte os erros e envie novamente.</p>
-
 <button type="button" onclick="history.go(-1)">&larr; Voltar</button>
-
 HTML;
 
 endif;
